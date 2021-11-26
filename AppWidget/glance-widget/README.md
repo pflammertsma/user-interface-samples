@@ -83,6 +83,31 @@ class FirstGlanceWidgetReceiver : GlanceAppWidgetReceiver() {
 }
 ```
 
+## Scrollable layout
+
+`LazyColumn` composable allows you to define a set of items inside a scrollable container in the
+widget.
+
+[`TodoListGlanceWidget.kt`](src/main/java/com/example/android/glancewidget/TodoListGlanceWidget.kt\#L92)
+
+```kotlin
+LazyColumn {
+    items(groceryStringIds) {
+        ...
+        CheckBox(
+            ...
+        )
+    }
+}
+```
+
+Note: Glance translates a LazyColumn into an actual [ListView](https://developer.android.com/reference/android/widget/ListView),
+thus same limitations and restrictions of the [collection of RemoteViews](https://developer.android.com/guide/topics/appwidgets/collections)
+apply.
+
+## State management
+
+
 
 # Pre-requisites
 
